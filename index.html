@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EfbiSave - Facebook Video Downloader</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand" aria-label="EfbiSave">
+          <span class="brand__primary">Efbi</span>
+          <span class="brand__secondary">Save</span>
+        </div>
+        <button class="hamburger" aria-label="Open menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1>Download Facebook Video</h1>
+            <p class="subtitle">
+              FB video download 1080p - 2K - 4K. Free. All devices
+            </p>
+
+            <form class="download-form" id="downloadForm">
+              <div class="input-group">
+                <input
+                  type="url"
+                  id="videoUrl"
+                  placeholder="Paste video URL Facebook"
+                  autocomplete="off"
+                  required
+                />
+                <button
+                  class="paste-btn"
+                  type="button"
+                  id="pasteBtn"
+                  aria-label="Paste from clipboard"
+                  title="Paste from clipboard"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M16 2H8a2 2 0 0 0-2 2v2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-1V4a2 2 0 0 0-2-2Zm0 4H8V4h8v2Zm3 14H5V8h14v12Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <button class="primary-btn" type="submit">Download</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="container">
+          <div id="status" class="status empty">
+            <div class="status__icon">⬇️</div>
+            <p>Paste Facebook video URL and click Download to see formats.</p>
+          </div>
+
+          <div id="loading" class="loading hidden" aria-live="polite">
+            <span class="spinner"></span>
+            <p>Resolving video formats...</p>
+          </div>
+
+          <div id="error" class="status error hidden" role="alert"></div>
+
+          <div id="resultsCard" class="results-card hidden">
+            <div class="results-card__header">
+              <h2>Available formats</h2>
+              <p id="videoTitle" class="results-card__title"></p>
+            </div>
+            <div id="formatsList" class="formats"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>EfbiSave © 2025. Built for personal use with permission.</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
